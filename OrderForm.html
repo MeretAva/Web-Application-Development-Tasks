@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <title>Order Form for Computer Components</title>
+        <link rel="stylesheet" href="C:\Users\meret\OneDrive - IU International University of Applied Sciences\iu\Semester 2\Web Application Development\OrderForm.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="C:\Users\meret\OneDrive - IU International University of Applied Sciences\iu\Semester 2\Web Application Development\OrderForm.js" async></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Web Application Development Task 6">
+        <meta name="author" content="Meret Ava Ditzler">
+    </head>
+
+
+
+    <body>
+        <main>
+
+    <!--HEADING START-->
+            <div id="Heading" class="text-center">
+                <h1>MAGIComputer Components</h1>
+                <h4>Official Order Form for Computer Components</h4>
+            </div>
+    <!--HEADING END-->
+    
+            <br/><br/>
+    
+    <!--PRODUCT SELECTION START-->        
+            <div id="ProductSelection" class="WebsitePart">
+                <h3>Product Selection</h3>
+                <p>
+                    Please adjust the quantities of the products you would like to order. All prices are in Euros.
+                </p>
+
+                <br/>
+
+                <div id="Product1">
+                    <h4>External DVD Drive</h4>
+                    <p>
+                        Product Describtion:
+                        This external DVD Drive allows you to watch the content of any DVDs on your laptop. It is portable and comes with one USB 3.0 Type A chord. Suitable for any Operating System.
+                        <!--Room for additional describtion-->
+                    </p>
+                    <h6>Price:</h6>
+                    <p id="priceProduct1">20</p>
+                    <p><input id="quantityProduct1" type="number" name="quantityProduct1" value="0" min="0"></p>
+                </div>
+    
+                <br/><br/>
+    
+                <div id="Product2">
+                    <h4>Portable SSD</h4>
+                    <p>
+                        Product Describtion:
+                        A portable solid state drive with 1TB offering reliable storage for anyone on the go!
+                        <!--Room for additional describtion-->
+                    </p>
+                    <h6>Price:</h6>
+                    <p id="priceProduct2">70</p>
+                    <p><input id="quantityProduct2" type="number" name="quantityProduct2" value="0" min="0"></p>
+                </div>
+    
+                <br/><br/>
+
+                <!--Add additional products here before launching the order form-->
+    
+                <button onclick="CalculateTotal()">Total amount in Euros:</button>
+                <p id="totalForAllProducts"></p>
+                <br/>
+            </div>
+    <!--PRODUCT SELECTION END-->
+    
+            <br/><br/>
+
+    <!--ORDER NOTES START-->
+            <div id="OrderNotes" class="WebsitePart">
+                <h3>Order Notes</h3>
+                <p>Please let us know if you have any additional notes concerning your order.</p>
+                <form>
+                    <label for="OrderNotes">Order Notes</label>
+                    <input id="OrderNotes" type="text" name="Order Notes">
+                </form>
+            </div>
+    <!--ORDER NOTES END-->
+    
+            <br/><br/>
+
+    <!--CONTACT INFORMATION START-->
+            <div id="ContactInformation" class="WebsitePart">
+                <h3>Contact Information</h3>
+                <p>Please enter your contact information.</p>
+                <form>
+                    <label for="firstName">First Name</label>
+                    <br/>
+                    <input id="firstName" type="text" name="firstName" value="First Name">
+                    <br/>
+                    <label for="surName">Surname</label>
+                    <br/>
+                    <input id="surName" type="text" name="surName" value="Surname"> 
+                    <br/><br/>
+                    <label for="email">Email</label>
+                    <br/>
+                    <input id="email" type="email" name="email" value="jack.miller@iu-study.org">
+                    <br/><br/>
+                    <label for="Address">Address</label>
+                    <br/>
+                    <input id="Address" type="text" name="Address" value="Address Line 1">
+                    <br/>
+                    <input id="Address" type="text" name="Address" value="Address Line 2">
+                    <br/>
+                    <input id="Address" type="text" name="Address" value="Address Line 3">
+                </form>
+            </div>
+    <!--CONTACT INFORMATION END-->        
+    
+            <br/><br/>
+    <!--PAYMENT SECTION START-->
+            <div id="PaymentMethod" class="WebsitePart">
+                <h3>Payment Selection</h3>
+                <details ontoggle>
+                    <summary>Credit Card</summary>
+                    <p>
+                        <input id="CreditCardNumber" type="text" name="CreditCardNumber" value="Credit Card Number">
+                        <input id="ExpirationDate" type="text" name="ExpirationDate" value="MM/YY" min="5" max="5">
+                        <input id="CVV" type="text" name="CVV" min="3" max="3" value="CVV">
+                    </p>
+                </details>
+                <details ontoggle>
+                    <summary>PayPal</summary>
+                    <p>
+                        <button class="btn btn-info" onclick="PayPal()">Log into PayPal!</button>
+                    </p>
+                </details>
+            </div>
+    <!--PAYMENT SECTION END-->
+    
+            <br/><br/>
+    
+    <!--SUBMIT BUTTON START-->
+            <div id="SubmitButton" class="text-center">
+                <form>
+                    <input type="submit" onclick="SubmitMessage()" class="btn btn-success btn-lg">
+                </form>
+            </div> 
+    <!--SUBMIT BUTTON END-->
+            
+            <br/><br/>
+
+        </main>
+    
+    </body>
+
+    <footer>
+        <div id="FooterSection">
+
+        <!--COMPANY WEB PAGE INFROMATION START-->
+            <div id="CompanyName_WebPageInformation" class="FooterPart text-left">
+                <h3>MAGIComputer Components</h3>
+                <p>
+                    <p>This is only the ordering web page for computer components.</p>
+                    <p>For more information please visit the MAGIComputer Components <a href="">website</a>.</p>
+                </p>
+            </div>
+        <!--COMPANY WEB PAGE INFORMATION END-->
+        
+            <br/>
+
+        <!--CONTACT FORM SECTION START-->
+            <div id="ContactForm" class="FooterPart text-left">
+                <h5 id="ContactUs">Contact us!</h5>
+                <p>
+                    <p>Do you have any issues with the ordering process or the ordering form?</p>
+                    <p>Please sent us a message and state your problem and we will get right to it.</p>
+                    <div>
+                        <input type="button" class="btn btn-secondary" value="Report your issue now!" onclick="ContactButton()">
+                    </div>
+                </p> 
+            </div>
+        <!--CONTACT FORM SECTION END-->
+
+            <br/>
+
+        <!--COMPANY LOGO SECTION START-->
+            <div id="CompanyLogo" class="FooterPart text-center">
+                <p>
+                    <img src="" alt="This is the Logo of MAGIComputer Components." width="300">
+                </p>
+            </div>
+        <!--COMPANY LOGO SECTION END-->
+        </div>
+    </footer>
+        
+</html>
